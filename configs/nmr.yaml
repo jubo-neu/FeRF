@@ -1,0 +1,40 @@
+# Paper-scale settings; see docs/REPRODUCTION.md for unresolved architecture choices.
+model:
+  backbone: timm
+  pretrained: true
+  image_size: 64
+  local_dim: 32
+  field:
+    hidden: 128
+    layers: 4
+    feature_dim: 128
+    position_frequencies: 10
+    direction_frequencies: 4
+    feature_frequencies: 0
+render:
+  near: 0.8
+  far: 3.5
+  coarse_samples: 64
+  fine_samples: 128
+  ray_chunk: 256
+  query_chunk: 16384
+  white_background: true
+data:
+  root: data/nmr
+  image_size: 64
+train:
+  output: runs/nmr
+  steps: 500000
+  batch_size: 1
+  rays_per_image: 2048
+  encoder_lr: 0.00001
+  head_lr: 0.0001
+  warmup_steps: 10000
+  coarse_loss_weight: 1.0
+  grad_clip: 1.0
+  amp: true
+  seed: 42
+  cpu_threads: 4
+  log_every: 100
+  save_every: 10000
+  validate_every: 5000

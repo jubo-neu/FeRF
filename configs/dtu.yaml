@@ -1,0 +1,40 @@
+# Paper-scale preset. Adjust bounds to the normalized scene.
+data:
+  image_size: 128
+  root: data/dtu
+model:
+  backbone: timm
+  field:
+    direction_frequencies: 4
+    feature_dim: 128
+    feature_frequencies: 0
+    hidden: 128
+    layers: 4
+    position_frequencies: 10
+  image_size: 128
+  local_dim: 32
+  pretrained: true
+render:
+  coarse_samples: 64
+  far: 4.0
+  fine_samples: 128
+  near: 0.5
+  query_chunk: 16384
+  ray_chunk: 256
+  white_background: true
+train:
+  amp: true
+  batch_size: 1
+  coarse_loss_weight: 1.0
+  cpu_threads: 4
+  encoder_lr: 1.0e-05
+  grad_clip: 1.0
+  head_lr: 0.0001
+  log_every: 100
+  output: runs/dtu
+  rays_per_image: 2048
+  save_every: 10000
+  seed: 42
+  steps: 500000
+  validate_every: 5000
+  warmup_steps: 10000
