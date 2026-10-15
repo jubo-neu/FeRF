@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ferf-reproduction"
+version = "0.1.0"
+description = "Modular, paper-guided Feature Radiance Fields implementation"
+requires-python = ">=3.10"
+dependencies = ["torch>=2.2", "numpy>=1.24", "Pillow>=10", "PyYAML>=6", "tqdm>=4.66"]
+
+[project.optional-dependencies]
+pretrained = ["timm>=1.0", "torchvision>=0.17"]
+metrics = ["lpips>=0.1.4", "torchvision>=0.17"]
+dev = ["pytest>=8"]
+conversion = ["opencv-python>=4.8"]
+
+[tool.setuptools.packages.find]
+include = ["ferf*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

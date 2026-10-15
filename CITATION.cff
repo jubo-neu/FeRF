@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Please cite the FeRF paper when using the method. This repository is a paper-guided implementation."
+title: "Feature radiance fields (FeRF): A multi-level feature fusion method with deep neural network for image synthesis"
+type: article
+authors:
+  - family-names: Chen
+    given-names: Jubo
+  - family-names: Yu
+    given-names: Xiaosheng
+  - family-names: Wu
+    given-names: Chengdong
+  - family-names: Tian
+    given-names: Xiaolei
+  - family-names: Xu
+    given-names: Ke
+doi: 10.1016/j.asoc.2024.112262
+year: 2024
+journal: Applied Soft Computing
+volume: 167
+start: 112262
